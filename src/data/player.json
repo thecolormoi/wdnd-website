@@ -1,0 +1,10 @@
+{
+  "showName": "The Afternoon Mix",
+  "dj": "DJ Thunder",
+  "description": "Playing the best hits",
+  "tracks": [
+    { "title": "Midnight City", "artist": "M83", "time": "3:42 PM", "status": "prev" },
+    { "title": "Blinding Lights", "artist": "The Weeknd", "time": "Now", "status": "current" },
+    { "title": "Electric Feel", "artist": "MGMT", "time": "Up Next", "status": "next" }
+  ]
+}

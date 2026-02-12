@@ -1,0 +1,29 @@
+{
+  "intro": "WDND 101.7 FM is our high school's very own radio station. We're a low power FM (LPFM) station licensed by the FCC, giving students hands-on experience in broadcasting, journalism, and media production.",
+  "features": [
+    {
+      "icon": "Radio",
+      "title": "Low Power FM",
+      "description": "Broadcasting at 101.7 FM, WDND is an FCC-licensed low power FM station serving our school and surrounding community.",
+      "accent": "from-crimson to-crimson-dark"
+    },
+    {
+      "icon": "Users",
+      "title": "Student Run",
+      "description": "The station is operated by students and staff — from programming and production to on-air hosting.",
+      "accent": "from-navy to-navy-light"
+    },
+    {
+      "icon": "Mic",
+      "title": "Original Content",
+      "description": "Our DJs create unique shows featuring music, interviews, school news, sports coverage, and more.",
+      "accent": "from-crimson-dark to-crimson"
+    },
+    {
+      "icon": "Signal",
+      "title": "Community Voice",
+      "description": "WDND gives students a platform to be heard and connects our school with the local community.",
+      "accent": "from-navy-light to-navy"
+    }
+  ]
+}

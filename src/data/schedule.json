@@ -1,0 +1,13 @@
+{
+  "shows": [
+    { "day": "Monday", "time": "3:00 - 4:00 PM", "name": "The Afternoon Kickoff", "dj": "DJ Thunder", "genre": "Top Hits" },
+    { "day": "Monday", "time": "4:00 - 5:00 PM", "name": "Indie Spotlight", "dj": "Sarah M.", "genre": "Indie" },
+    { "day": "Tuesday", "time": "3:00 - 4:00 PM", "name": "Hip-Hop Hour", "dj": "MC Mike", "genre": "Hip-Hop" },
+    { "day": "Tuesday", "time": "4:00 - 5:00 PM", "name": "Throwback Jams", "dj": "DJ Rewind", "genre": "Throwback" },
+    { "day": "Wednesday", "time": "3:00 - 4:00 PM", "name": "The Rock Block", "dj": "Alex R.", "genre": "Rock" },
+    { "day": "Wednesday", "time": "4:00 - 5:00 PM", "name": "Chill Vibes", "dj": "Luna", "genre": "Lo-Fi" },
+    { "day": "Thursday", "time": "3:00 - 4:00 PM", "name": "News & Views", "dj": "The News Team", "genre": "Talk" },
+    { "day": "Thursday", "time": "4:00 - 5:00 PM", "name": "Request Hour", "dj": "Open Mic", "genre": "Requests" },
+    { "day": "Friday", "time": "3:00 - 5:00 PM", "name": "Friday Freestyles", "dj": "The Whole Crew", "genre": "Mixed" }
+  ]
+}

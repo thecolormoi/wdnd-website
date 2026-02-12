@@ -1,0 +1,103 @@
+{
+  "members": [
+    {
+      "name": "Jeremy Turner",
+      "realName": "Station Manager & DJ",
+      "role": "Station Manager & DJ",
+      "show": "Real or AI",
+      "schedule": "All Week",
+      "genre": "Game Show",
+      "bio": "Jeremy manages station operations and handles programming at WDND. He also hosts Real or AI, a game show segment where contestants listen to snippets of real songs and AI-generated tracks and have to guess which is which.",
+      "color": "from-navy to-navy-light",
+      "icon": "Radio"
+    },
+    {
+      "name": "DJ Thunder",
+      "realName": "Marcus Johnson",
+      "role": "Lead DJ",
+      "show": "The Afternoon Kickoff",
+      "schedule": "Mon 3–4 PM",
+      "genre": "Top Hits",
+      "bio": "The voice that kicks off every week. Marcus has been with WDND since day one and brings the energy every Monday.",
+      "color": "from-crimson to-crimson-dark",
+      "icon": "Headphones"
+    },
+    {
+      "name": "Sarah M.",
+      "realName": "Sarah Mitchell",
+      "role": "DJ & Producer",
+      "show": "Indie Spotlight",
+      "schedule": "Mon 4–5 PM",
+      "genre": "Indie",
+      "bio": "Sarah digs deep into the indie scene to surface tracks you won't hear anywhere else. She also produces promos for the station.",
+      "color": "from-navy to-navy-light",
+      "icon": "Music"
+    },
+    {
+      "name": "MC Mike",
+      "realName": "Michael Torres",
+      "role": "DJ",
+      "show": "Hip-Hop Hour",
+      "schedule": "Tue 3–4 PM",
+      "genre": "Hip-Hop",
+      "bio": "From classic boom-bap to the latest drops, Mike keeps Tuesday afternoons locked in with the best hip-hop.",
+      "color": "from-crimson-dark to-crimson",
+      "icon": "Mic"
+    },
+    {
+      "name": "DJ Rewind",
+      "realName": "Jamie Park",
+      "role": "DJ",
+      "show": "Throwback Jams",
+      "schedule": "Tue 4–5 PM",
+      "genre": "Throwback",
+      "bio": "Jamie takes listeners on a trip through the decades with the greatest throwback hits from the '80s, '90s, and 2000s.",
+      "color": "from-navy-light to-navy",
+      "icon": "Radio"
+    },
+    {
+      "name": "Alex R.",
+      "realName": "Alex Rivera",
+      "role": "DJ",
+      "show": "The Rock Block",
+      "schedule": "Wed 3–4 PM",
+      "genre": "Rock",
+      "bio": "From garage bands to arena anthems, Alex brings the raw power of rock to the airwaves every Wednesday.",
+      "color": "from-crimson to-crimson-dark",
+      "icon": "Star"
+    },
+    {
+      "name": "Luna",
+      "realName": "Luna Chen",
+      "role": "DJ & Music Director",
+      "show": "Chill Vibes",
+      "schedule": "Wed 4–5 PM",
+      "genre": "Lo-Fi",
+      "bio": "Luna curates the smoothest lo-fi and chill beats for winding down midweek. She also manages the station's music library.",
+      "color": "from-navy to-navy-light",
+      "icon": "Headphones"
+    },
+    {
+      "name": "The News Team",
+      "realName": "Priya, Dante & Olivia",
+      "role": "Reporters",
+      "show": "News & Views",
+      "schedule": "Thu 3–4 PM",
+      "genre": "Talk",
+      "bio": "Our award-winning news team covers everything from school events to local community stories that matter.",
+      "color": "from-crimson-dark to-crimson",
+      "icon": "Mic"
+    },
+    {
+      "name": "Open Mic",
+      "realName": "Rotating Hosts",
+      "role": "Guest DJs",
+      "show": "Request Hour",
+      "schedule": "Thu 4–5 PM",
+      "genre": "Requests",
+      "bio": "Anyone can take the mic! Request Hour is run by a rotating cast of student guest DJs playing your picks.",
+      "color": "from-navy-light to-navy",
+      "icon": "Radio"
+    }
+  ]
+}

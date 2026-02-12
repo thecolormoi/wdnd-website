@@ -1,0 +1,23 @@
+{
+  "title": "The Sentinel Sessions",
+  "description": "Inspired by NPR's Tiny Desk, we're building a space for local artists to perform live in our studio. No big stage, no barrier — just raw talent, a microphone, and an audience tuned in across the airwaves.",
+  "ctaText": "We're looking for local musicians to perform on The Sentinel Sessions. Send us your music and a little about yourself — we'd love to have you in the studio.",
+  "artistEmail": "wdnd-artists@ascte.org",
+  "highlights": [
+    {
+      "icon": "Mic",
+      "title": "Intimate Live Sets",
+      "description": "Artists perform stripped-down sets right in our studio, captured in high quality audio and broadcast live on 101.7 FM."
+    },
+    {
+      "icon": "Star",
+      "title": "Local Talent First",
+      "description": "We prioritize artists from Huntsville and the greater North Alabama area. If you're making music nearby, we want to hear it."
+    },
+    {
+      "icon": "Music",
+      "title": "Every Genre Welcome",
+      "description": "Hip-hop, indie, rock, R&B, country, electronic — if it sounds good live, it belongs on our stage."
+    }
+  ]
+}
