@@ -43,7 +43,7 @@ export default function Player() {
               {/* Station logo with glow */}
               <div className="relative shrink-0">
                 <div className="absolute inset-0 bg-crimson/20 rounded-2xl blur-xl" style={{ animation: 'pulse-ring 3s ease-in-out infinite' }} />
-                <div className="relative w-36 h-36 md:w-44 md:h-44 flex items-center justify-center">
+                <div className="relative w-44 h-44 md:w-56 md:h-56 flex items-center justify-center">
                   <img src="/logo.png" alt="Sentinel Radio" className="w-full h-auto drop-shadow-2xl" />
                 </div>
               </div>
