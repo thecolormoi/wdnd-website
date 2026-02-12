@@ -9,183 +9,207 @@ public_folder: /images/uploads
 collections:
   - name: team
     label: DJ Team
-    file: src/data/team.json
-    format: json
     editor:
       preview: false
-    fields:
-      - name: members
+    files:
+      - name: team
         label: Team Members
-        widget: list
+        file: src/data/team.json
+        format: json
         fields:
-          - { name: name, label: Name, widget: string }
-          - { name: realName, label: Real Name / Subtitle, widget: string }
-          - { name: role, label: Role, widget: string }
-          - { name: show, label: Show Name, widget: string }
-          - { name: schedule, label: Schedule, widget: string }
-          - { name: genre, label: Genre, widget: string }
-          - { name: bio, label: Bio, widget: text }
-          - name: color
-            label: Gradient Color
-            widget: select
-            options:
-              - { label: "Navy to Navy Light", value: "from-navy to-navy-light" }
-              - { label: "Crimson to Crimson Dark", value: "from-crimson to-crimson-dark" }
-              - { label: "Crimson Dark to Crimson", value: "from-crimson-dark to-crimson" }
-              - { label: "Navy Light to Navy", value: "from-navy-light to-navy" }
-          - name: icon
-            label: Icon
-            widget: select
-            options:
-              - { label: "Radio", value: "Radio" }
-              - { label: "Headphones", value: "Headphones" }
-              - { label: "Music", value: "Music" }
-              - { label: "Mic", value: "Mic" }
-              - { label: "Star", value: "Star" }
-              - { label: "Users", value: "Users" }
-              - { label: "Signal", value: "Signal" }
+          - name: members
+            label: Team Members
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: realName, label: Real Name / Subtitle, widget: string }
+              - { name: role, label: Role, widget: string }
+              - { name: show, label: Show Name, widget: string }
+              - { name: schedule, label: Schedule, widget: string }
+              - { name: genre, label: Genre, widget: string }
+              - { name: bio, label: Bio, widget: text }
+              - name: color
+                label: Gradient Color
+                widget: select
+                options:
+                  - { label: "Navy to Navy Light", value: "from-navy to-navy-light" }
+                  - { label: "Crimson to Crimson Dark", value: "from-crimson to-crimson-dark" }
+                  - { label: "Crimson Dark to Crimson", value: "from-crimson-dark to-crimson" }
+                  - { label: "Navy Light to Navy", value: "from-navy-light to-navy" }
+              - name: icon
+                label: Icon
+                widget: select
+                options:
+                  - { label: "Radio", value: "Radio" }
+                  - { label: "Headphones", value: "Headphones" }
+                  - { label: "Music", value: "Music" }
+                  - { label: "Mic", value: "Mic" }
+                  - { label: "Star", value: "Star" }
+                  - { label: "Users", value: "Users" }
+                  - { label: "Signal", value: "Signal" }
 
   - name: schedule
     label: Show Schedule
-    file: src/data/schedule.json
-    format: json
     editor:
       preview: false
-    fields:
-      - name: shows
-        label: Shows
-        widget: list
+    files:
+      - name: schedule
+        label: Show Schedule
+        file: src/data/schedule.json
+        format: json
         fields:
-          - name: day
-            label: Day
-            widget: select
-            options:
-              - Monday
-              - Tuesday
-              - Wednesday
-              - Thursday
-              - Friday
-          - { name: time, label: Time Slot, widget: string }
-          - { name: name, label: Show Name, widget: string }
-          - { name: dj, label: DJ Name, widget: string }
-          - { name: genre, label: Genre, widget: string }
+          - name: shows
+            label: Shows
+            widget: list
+            fields:
+              - name: day
+                label: Day
+                widget: select
+                options:
+                  - Monday
+                  - Tuesday
+                  - Wednesday
+                  - Thursday
+                  - Friday
+              - { name: time, label: Time Slot, widget: string }
+              - { name: name, label: Show Name, widget: string }
+              - { name: dj, label: DJ Name, widget: string }
+              - { name: genre, label: Genre, widget: string }
 
   - name: contact
     label: Contact Info
-    file: src/data/contact.json
-    format: json
     editor:
       preview: false
-    fields:
-      - { name: email, label: Station Email, widget: string }
-      - { name: artistEmail, label: Artist Submissions Email, widget: string }
-      - { name: address, label: Address, widget: string }
+    files:
+      - name: contact
+        label: Contact Info
+        file: src/data/contact.json
+        format: json
+        fields:
+          - { name: email, label: Station Email, widget: string }
+          - { name: artistEmail, label: Artist Submissions Email, widget: string }
+          - { name: address, label: Address, widget: string }
 
   - name: hero
     label: Hero Section
-    file: src/data/hero.json
-    format: json
     editor:
       preview: false
-    fields:
-      - { name: badge, label: Badge Text, widget: string }
-      - { name: tagline, label: Tagline, widget: text }
+    files:
+      - name: hero
+        label: Hero Section
+        file: src/data/hero.json
+        format: json
+        fields:
+          - { name: badge, label: Badge Text, widget: string }
+          - { name: tagline, label: Tagline, widget: text }
 
   - name: footer
     label: Footer
-    file: src/data/footer.json
-    format: json
     editor:
       preview: false
-    fields:
-      - { name: description, label: Description, widget: text }
-      - { name: broadcastHours, label: Broadcast Hours, widget: text }
-      - { name: hashtag, label: Hashtag, widget: string }
+    files:
+      - name: footer
+        label: Footer
+        file: src/data/footer.json
+        format: json
+        fields:
+          - { name: description, label: Description, widget: text }
+          - { name: broadcastHours, label: Broadcast Hours, widget: text }
+          - { name: hashtag, label: Hashtag, widget: string }
 
   - name: about
     label: About Section
-    file: src/data/about.json
-    format: json
     editor:
       preview: false
-    fields:
-      - { name: intro, label: Intro Text, widget: text }
-      - name: features
-        label: Feature Cards
-        widget: list
+    files:
+      - name: about
+        label: About Section
+        file: src/data/about.json
+        format: json
         fields:
-          - name: icon
-            label: Icon
-            widget: select
-            options:
-              - { label: "Radio", value: "Radio" }
-              - { label: "Mic", value: "Mic" }
-              - { label: "Music", value: "Music" }
-              - { label: "Star", value: "Star" }
-              - { label: "Users", value: "Users" }
-              - { label: "Signal", value: "Signal" }
-              - { label: "Headphones", value: "Headphones" }
-          - { name: title, label: Title, widget: string }
-          - { name: description, label: Description, widget: text }
-          - name: accent
-            label: Accent Color
-            widget: select
-            options:
-              - { label: "Crimson to Crimson Dark", value: "from-crimson to-crimson-dark" }
-              - { label: "Navy to Navy Light", value: "from-navy to-navy-light" }
-              - { label: "Crimson Dark to Crimson", value: "from-crimson-dark to-crimson" }
-              - { label: "Navy Light to Navy", value: "from-navy-light to-navy" }
+          - { name: intro, label: Intro Text, widget: text }
+          - name: features
+            label: Feature Cards
+            widget: list
+            fields:
+              - name: icon
+                label: Icon
+                widget: select
+                options:
+                  - { label: "Radio", value: "Radio" }
+                  - { label: "Mic", value: "Mic" }
+                  - { label: "Music", value: "Music" }
+                  - { label: "Star", value: "Star" }
+                  - { label: "Users", value: "Users" }
+                  - { label: "Signal", value: "Signal" }
+                  - { label: "Headphones", value: "Headphones" }
+              - { name: title, label: Title, widget: string }
+              - { name: description, label: Description, widget: text }
+              - name: accent
+                label: Accent Color
+                widget: select
+                options:
+                  - { label: "Crimson to Crimson Dark", value: "from-crimson to-crimson-dark" }
+                  - { label: "Navy to Navy Light", value: "from-navy to-navy-light" }
+                  - { label: "Crimson Dark to Crimson", value: "from-crimson-dark to-crimson" }
+                  - { label: "Navy Light to Navy", value: "from-navy-light to-navy" }
 
   - name: live-sessions
     label: Live Sessions
-    file: src/data/live-sessions.json
-    format: json
     editor:
       preview: false
-    fields:
-      - { name: title, label: Title, widget: string }
-      - { name: description, label: Description, widget: text }
-      - { name: ctaText, label: CTA Text, widget: text }
-      - { name: artistEmail, label: Artist Email, widget: string }
-      - name: highlights
-        label: Highlights
-        widget: list
+    files:
+      - name: live-sessions
+        label: Live Sessions
+        file: src/data/live-sessions.json
+        format: json
         fields:
-          - name: icon
-            label: Icon
-            widget: select
-            options:
-              - { label: "Mic", value: "Mic" }
-              - { label: "Star", value: "Star" }
-              - { label: "Music", value: "Music" }
-              - { label: "Radio", value: "Radio" }
-              - { label: "Headphones", value: "Headphones" }
-              - { label: "Users", value: "Users" }
-              - { label: "Signal", value: "Signal" }
           - { name: title, label: Title, widget: string }
           - { name: description, label: Description, widget: text }
+          - { name: ctaText, label: CTA Text, widget: text }
+          - { name: artistEmail, label: Artist Email, widget: string }
+          - name: highlights
+            label: Highlights
+            widget: list
+            fields:
+              - name: icon
+                label: Icon
+                widget: select
+                options:
+                  - { label: "Mic", value: "Mic" }
+                  - { label: "Star", value: "Star" }
+                  - { label: "Music", value: "Music" }
+                  - { label: "Radio", value: "Radio" }
+                  - { label: "Headphones", value: "Headphones" }
+                  - { label: "Users", value: "Users" }
+                  - { label: "Signal", value: "Signal" }
+              - { name: title, label: Title, widget: string }
+              - { name: description, label: Description, widget: text }
 
   - name: player
     label: Player
-    file: src/data/player.json
-    format: json
     editor:
       preview: false
-    fields:
-      - { name: showName, label: Current Show Name, widget: string }
-      - { name: dj, label: DJ Name, widget: string }
-      - { name: description, label: Description, widget: string }
-      - name: tracks
-        label: Tracks
-        widget: list
+    files:
+      - name: player
+        label: Player
+        file: src/data/player.json
+        format: json
         fields:
-          - { name: title, label: Song Title, widget: string }
-          - { name: artist, label: Artist, widget: string }
-          - { name: time, label: Time / Label, widget: string }
-          - name: status
-            label: Status
-            widget: select
-            options:
-              - { label: "Previous", value: "prev" }
-              - { label: "Now Playing", value: "current" }
-              - { label: "Up Next", value: "next" }
+          - { name: showName, label: Current Show Name, widget: string }
+          - { name: dj, label: DJ Name, widget: string }
+          - { name: description, label: Description, widget: string }
+          - name: tracks
+            label: Tracks
+            widget: list
+            fields:
+              - { name: title, label: Song Title, widget: string }
+              - { name: artist, label: Artist, widget: string }
+              - { name: time, label: Time / Label, widget: string }
+              - name: status
+                label: Status
+                widget: select
+                options:
+                  - { label: "Previous", value: "prev" }
+                  - { label: "Now Playing", value: "current" }
+                  - { label: "Up Next", value: "next" }
