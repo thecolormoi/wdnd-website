@@ -1,8 +1,34 @@
-import { Mail, MapPin, Music } from 'lucide-react'
+import { useState } from 'react'
+import { Mail, MapPin, Music, Check, AlertCircle } from 'lucide-react'
 import AnimateIn from './AnimateIn'
 import contactData from '../data/contact.json'
 
 export default function Contact() {
+  const [status, setStatus] = useState('idle') // idle | submitting | success | error
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setStatus('submitting')
+
+    const form = e.target
+    const data = new FormData(form)
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString(),
+      })
+      if (!res.ok) throw new Error('Submission failed')
+      setStatus('success')
+      form.reset()
+      setTimeout(() => setStatus('idle'), 4000)
+    } catch {
+      setStatus('error')
+      setTimeout(() => setStatus('idle'), 4000)
+    }
+  }
+
   return (
     <section id="contact" className="w-full bg-gray-50 py-20">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
@@ -57,29 +83,54 @@ export default function Contact() {
 
               {/* Form */}
               <AnimateIn className="md:col-span-3 p-8" delay={200}>
-                <form onSubmit={(e) => e.preventDefault()} className="grid gap-4">
+                <form onSubmit={handleSubmit} className="grid gap-4">
+                  <input type="hidden" name="form-name" value="contact" />
+                  <p className="hidden">
+                    <label>Don't fill this out: <input name="bot-field" /></label>
+                  </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <input
                       type="text"
+                      name="name"
                       placeholder="Your name"
+                      required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy/20 focus:border-navy text-sm transition-shadow"
                     />
                     <input
                       type="email"
+                      name="email"
                       placeholder="Your email"
+                      required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy/20 focus:border-navy text-sm transition-shadow"
                     />
                   </div>
                   <textarea
+                    name="message"
                     rows={5}
                     placeholder="Your message or song request..."
+                    required
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy/20 focus:border-navy text-sm resize-none transition-shadow"
                   />
+
+                  {status === 'success' && (
+                    <div className="flex items-center gap-2 text-green-600 text-sm font-medium">
+                      <Check className="w-4 h-4" />
+                      Message sent! We'll get back to you soon.
+                    </div>
+                  )}
+                  {status === 'error' && (
+                    <div className="flex items-center gap-2 text-red-600 text-sm font-medium">
+                      <AlertCircle className="w-4 h-4" />
+                      Something went wrong. Please try again or email us directly.
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="bg-crimson hover:bg-crimson-dark hover:scale-[1.02] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md shadow-crimson/20 w-full sm:w-auto"
+                    disabled={status === 'submitting'}
+                    className="bg-crimson hover:bg-crimson-dark hover:scale-[1.02] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md shadow-crimson/20 w-full sm:w-auto disabled:opacity-60 disabled:hover:scale-100"
                   >
-                    Send Message
+                    {status === 'submitting' ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               </AnimateIn>
