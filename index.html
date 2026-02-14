@@ -10,6 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- Hidden forms for Netlify bot detection (React renders client-side) -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+    <form name="song-request" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="song" />
+      <input type="text" name="artist" />
+      <input type="text" name="requester" />
+      <input type="text" name="message" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

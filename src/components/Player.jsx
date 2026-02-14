@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from 'react'
-import { Play, Pause, Volume2, Radio, ListMusic, Send, Check, Music } from 'lucide-react'
+import { Play, Pause, Volume2, Radio, ListMusic, Send, Check, AlertCircle, Music } from 'lucide-react'
 import AnimateIn from './AnimateIn'
 import playerData from '../data/player.json'
 
 export default function Player() {
   const [playing, setPlaying] = useState(false)
   const [showRequest, setShowRequest] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
+  const [requestStatus, setRequestStatus] = useState('idle') // idle | submitting | success | error
   const formRef = useRef(null)
 
   const { tracks } = playerData
@@ -18,19 +18,35 @@ export default function Player() {
   ]
 
   useEffect(() => {
-    if (submitted) {
+    if (requestStatus === 'success') {
       const timer = setTimeout(() => {
-        setSubmitted(false)
+        setRequestStatus('idle')
         setShowRequest(false)
       }, 2000)
       return () => clearTimeout(timer)
     }
-  }, [submitted])
+  }, [requestStatus])
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    setSubmitted(true)
-    e.target.reset()
+    setRequestStatus('submitting')
+
+    const form = e.target
+    const data = new FormData(form)
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString(),
+      })
+      if (!res.ok) throw new Error('Submission failed')
+      setRequestStatus('success')
+      form.reset()
+    } catch {
+      setRequestStatus('error')
+      setTimeout(() => setRequestStatus('idle'), 4000)
+    }
   }
 
   return (
@@ -96,7 +112,7 @@ export default function Player() {
                   </div>
 
                   <button
-                    onClick={() => { setShowRequest(!showRequest); setSubmitted(false) }}
+                    onClick={() => { setShowRequest(!showRequest); setRequestStatus('idle') }}
                     className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all duration-200 ${
                       showRequest
                         ? 'bg-crimson/15 border-crimson/40 text-crimson'
@@ -193,42 +209,57 @@ export default function Player() {
               }}
             >
               <div className="border-t border-white/10 px-8 md:px-12 py-8">
-                {submitted ? (
+                {requestStatus === 'success' ? (
                   <div className="flex items-center justify-center gap-2 text-green-400 py-4">
                     <Check className="w-5 h-5" />
                     <span className="font-medium">Request submitted!</span>
                   </div>
                 ) : (
                   <form ref={formRef} onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="hidden" name="form-name" value="song-request" />
+                    <p className="hidden">
+                      <label>Don't fill this out: <input name="bot-field" /></label>
+                    </p>
                     <input
                       type="text"
+                      name="song"
                       placeholder="Song name *"
                       required
                       className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-crimson/50 transition-colors"
                     />
                     <input
                       type="text"
+                      name="artist"
                       placeholder="Artist *"
                       required
                       className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-crimson/50 transition-colors"
                     />
                     <input
                       type="text"
+                      name="requester"
                       placeholder="Your name (optional)"
                       className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-crimson/50 transition-colors"
                     />
                     <input
                       type="text"
+                      name="message"
                       placeholder="Short message (optional)"
                       className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-crimson/50 transition-colors"
                     />
-                    <div className="sm:col-span-2 flex justify-end">
+                    <div className="sm:col-span-2 flex items-center justify-end gap-3">
+                      {requestStatus === 'error' && (
+                        <span className="flex items-center gap-1.5 text-red-400 text-sm">
+                          <AlertCircle className="w-4 h-4" />
+                          Failed to send. Try again.
+                        </span>
+                      )}
                       <button
                         type="submit"
-                        className="inline-flex items-center gap-2 bg-crimson hover:bg-crimson-dark px-6 py-2.5 rounded-lg text-white text-sm font-semibold transition-colors duration-200"
+                        disabled={requestStatus === 'submitting'}
+                        className="inline-flex items-center gap-2 bg-crimson hover:bg-crimson-dark px-6 py-2.5 rounded-lg text-white text-sm font-semibold transition-colors duration-200 disabled:opacity-60"
                       >
                         <Send className="w-4 h-4" />
-                        Submit Request
+                        {requestStatus === 'submitting' ? 'Sending...' : 'Submit Request'}
                       </button>
                     </div>
                   </form>
